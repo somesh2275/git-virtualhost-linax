@@ -1,0 +1,40 @@
+/*-----------------------Virtual Host Setup on Linux------------------------*/
+
+//// ENTER INTO HOST FILE
+
+nano /etc/hosts
+
+
+///// CHECK SITE AVAILABLE IN HOST FILE
+
+cd /etc/apache2/sites-available
+
+cd /etc/apache2/sites-available ls
+
+
+/////COPY test config to test example config
+
+cp -r test.conf test-example.conf
+
+subl test-example.conf
+
+
+/*Virtualhost*/
+////Add url to given urls
+
+test.example.com
+
+
+////Reload Apache
+service apache2 reload
+
+
+/////apache ENABLE sites with given config
+
+sudo a2ensites test-example.conf
+
+////Reload Apache
+service apache2 reload
+
+
+/*-------------And Bang Your Virtualhost is ready. Copy that url and enter it in your browser you can use url with local machine.--------------*/
